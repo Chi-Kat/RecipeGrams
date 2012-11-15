@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<div class="drinks">
+<p>
+  <b>Name:</b>
+  <%= @recipe.name %>
+</p>
+
+<div>
+  <b>Ingredient:</b>
+  <%= @recipe.ingredient %>
+</div>
+
+<p>
+  <b>Instruction:</b>
+  <%= @recipe.instruction %>
+</p>
+
+<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Home', recipes_path %>
+</div>
+
+<div class="instagram">
+
+	<ul> <% n = 0 %>
+		<% while n < 12 %>
+		<% n += 1 %>
+			<li> <img src=<%= @hash["data"][n]["images"]["thumbnail"]["url"] %>><br>
+			<%= @hash["data"][n]["filter"] %>
+			</li>
+		<% end %>
+	</ul>
+
+</div>
+
+
+

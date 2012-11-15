@@ -1,0 +1,88 @@
+body {
+			background-color: #5A0000;
+			background-image: url('chandelier.png'), url('martini2.png'), url('martini.png');
+			background-size: cover;
+			background-position: -13% -45%, 80% 100%, 90% 100%;
+			background-size: 400px, 200px, 300px;
+}
+
+h1 {
+	color: #FFFFEC;
+	font-family: Cursive, Comic Sans MS, sans-serif;
+	text-align: center;
+}
+
+.form {
+	width: 400px;
+							margin: auto;		
+							background-color: #FFFFEC;
+							border-radius: 10px;
+							color: 	#1F0000;
+							padding: 10px 10px 10px 10px;
+	textarea {
+		width: 100%;
+		margin: 1px 1px 1px 1px;
+		background-color: #FFFFEC;
+	}
+	textarea#recipe_name {
+		height: 15px;
+		}
+		textarea#recipe_ingredient {
+		height: 40px;
+		}
+		textarea#recipe_instruction {
+		height: 150px;
+		}
+}
+
+.recipe_list {
+							width: 400px;
+							margin: auto;		
+							background-color: #FFFFEC;
+							border-radius: 10px;
+							color: 	#1F0000;
+	a {
+		text-decoration:none;
+		font-weight: bold;
+	}
+	ul {	
+		list-style-type: none;
+		padding: 10px 10px 10px 10px;
+	}
+	ul li {
+				
+				padding: 5px 0px 5px 0px;
+				border-bottom: solid 1px;
+	}
+}
+
+.drinks { 
+				width: 250px;
+				float: left; 
+}
+
+.instagram { 
+						width: 620px;
+            float: left;
+	ul {	
+				list-style-type: none;
+				padding: 0px;
+				margin-top: 0px;
+	}
+	ul li {
+				float: left;
+				margin-left: 5px;
+				text-align: center;
+	}
+}
+
+//body { 
+	//		background-image: url('drink.png');
+		//	background-size: cover;
+			//background-repeat: no-repeat;
+//}
+			//background-color: #5A0000;
+			//background-image: url('chandelier.png'), url('martini2.png'), url('martini.png');
+			//background-repeat: no-repeat;
+			//background-position: -13% -45%, 80% 100%, 90% 100%;
+			//background-size: 400px, 200px, 300px;
