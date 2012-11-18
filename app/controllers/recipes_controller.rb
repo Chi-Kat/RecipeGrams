@@ -6,16 +6,34 @@ class RecipesController < ApplicationController
   # GET /recipes.json
 
   def home
+
+    @q = params["q"]
+
+    if @q.present?
+      puppy = URI.parse("http://www.recipepuppy.com/api/?q=#{@q}")
+      http = Net::HTTP.new(puppy.host, puppy.port)
+      ask = Net::HTTP::Get.new(puppy.request_uri)
+      answer = http.request(ask)
+      @info = JSON.parse(answer.body)
+
+
+      token = '' 
+
+      uri = URI.parse("https://api.instagram.com/v1/tags/#{@q}/media/recent?access_token=#{token}")
+      http = Net::HTTP.new(uri.host, uri.port)
+      http.use_ssl = true
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+      request = Net::HTTP::Get.new(uri.request_uri)
+      response = http.request(request)
+      @information = response.body
+      @hash = JSON.parse(@information)
+    end
+
   end
 
   def index
     @recipes = Recipe.all
 
-    uri = URI.parse("http://www.recipepuppy.com/api/?q=omelet")
-    http = Net::HTTP.new(uri.host, uri.port)
-    request = Net::HTTP::Get.new(uri.request_uri)
-    response = http.request(request)
-    @hash = JSON.parse(response.body)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -33,7 +51,7 @@ class RecipesController < ApplicationController
 
     token = '' 
 
-    uri = URI.parse("https://api.instagram.com/v1/tags/#{@recipe.name}/media/recent?access_token=")
+    uri = URI.parse("https://api.instagram.com/v1/tags/#{@recipe.name}/media/recent?access_token=#{token}")
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE

@@ -1,8 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'oauth'
-gem 'instagram'
-
 gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:

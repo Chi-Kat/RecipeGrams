@@ -2,6 +2,8 @@ Holidaydrinks::Application.routes.draw do
 
   root :to => 'recipes#home'
 
+  get 'recipes/home' => 'recipes#home', :as => :home
+
   resources :recipes
 
   # The priority is based upon order of creation:
