@@ -4,12 +4,35 @@ body {
 			background-size: cover;
 			background-position: -13% -45%, 80% 100%, 90% 100%;
 			background-size: 400px, 200px, 300px;
+			//background-origin:border-box;
 }
 
 h1 {
 	color: #FFFFEC;
 	font-family: Cursive, Comic Sans MS, sans-serif;
 	text-align: center;
+}
+
+.container {
+	width: 880px;
+	height:550px;
+	margin: auto;
+	padding-top: 20px;		
+	background-color: #FFFFEC;
+	border-radius: 10px;
+	color: 	#1F0000;
+	ul {	
+		list-style-type: none;
+		padding: 10px 10px 10px 10px;
+	}
+	ul li {
+		padding-bottom: 5px;
+	}
+	a {
+		text-decoration:none;
+		color: 	#1F0000;
+		font-family: Sans-serif, Comic Sans MS;
+	}
 }
 
 .form {
