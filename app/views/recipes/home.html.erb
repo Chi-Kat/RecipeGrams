@@ -21,16 +21,24 @@
 </div>
 
 <div class="instagram">
-
 	<ul> <% n = 0 %>
+<%if @hash["data"].length > 12%>
 		<% while n < 12 %>
-		<% n += 1 %>
 			<li> <img src=<%= @hash["data"][n]["images"]["thumbnail"]["url"] %>><br>
 			<%= @hash["data"][n]["filter"] %>
 			</li>
+					<% n += 1 %>
 		<% end %>
 	</ul>
-
+<%else%>
+		<% while n < @hash["data"].length %>		
+			<li> <img src=<%= @hash["data"][n]["images"]["thumbnail"]["url"] %>><br>
+			<%= @hash["data"][n]["filter"] %>
+			</li>
+			<% n += 1 %>
+		<% end %>
+	</ul>
+<%end%>
 </div>
 <%end%>
 
